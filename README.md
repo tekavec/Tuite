@@ -88,6 +88,7 @@
 	<ul>
 		<li>.NET Framework 4.5</li>
 		<li>Visual Studio 2013</li>
+		<li>NuGet 2.8</li>
 	</ul>
 
 </p>
@@ -105,5 +106,5 @@
 	Setup
 </h3>
 <p>
-	Open Tuite.sln in Visual Studio 2013, set Tuite project as a startup project and hit the F5/Start command button.
+	Open Tuite.sln in Visual Studio 2013, set Tuite project as a startup project, build the solution and hit the F5/Start command button. Building the solution should install all necessary NuGet packages.
 </p>
