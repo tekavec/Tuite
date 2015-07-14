@@ -11,9 +11,19 @@
 </p>
 <p>
 	Alice can publish messages to a personal timeline:
-	> Alice -> I love the weather today  
-	> Bob -> Damn! We lost!  
-	> Bob -> Good game though. 
+</p>
+<p>
+	<code>
+		> Alice -> I love the weather today  
+	</code>	
+	<br />
+	<code>
+		> Bob -> Damn! We lost!  
+	</code>
+	<br />
+	<code>
+		> Bob -> Good game though. 
+	</code>
 </p>
 
 <p>
@@ -23,16 +33,25 @@
 	Bob can view Alice’s timeline:
 </p>
 <p>
-	> Alice 
+	<code>
+		> Alice 
+	</code>	
 	<br />
-	I love the weather today (5 minutes ago) 
+	<code>
+		I love the weather today (5 minutes ago) 
+	</code>	
 	<br />
-	> Bob  
+	<code>
+		> Bob  
+	</code>	
 	<br />
-	Good game though. (1 minute ago) 
+	<code>
+		Good game though. (1 minute ago) 
+	</code>	
 	<br />
-	Damn! We lost! (2 minutes ago) 
-	<br />
+	<code>
+		Damn! We lost! (2 minutes ago) 
+	</code>	
 </p>
 <p>
 	<strong>Following</strong>
@@ -41,27 +60,49 @@
 	Charlie can subscribe to Alice’s and Bob’s timelines, and view an aggregated list of all subscriptions:
 </p>
 <p>
-	> Charlie -> I’m in New York today! Anyone want to have a coffee?  
+	<code>
+		> Charlie -> I’m in New York today! Anyone want to have a coffee?  
+	</code>	
 	<br />
-	> Charlie follows Alice  
+	<code>
+		> Charlie follows Alice  
+	</code>	
 	<br />
-	> Charlie wall  
+	<code>
+		> Charlie wall  
+	</code>	
 	<br />
-	Charlie - I’m in New York today! Anyone want to have a coffee? (2 seconds ago)  
+	<code>
+		Charlie - I’m in New York today! Anyone want to have a coffee? (2 seconds ago)  
+	</code>	
 	<br />
-	Alice - I love the weather today (5 minutes ago) 
+	<code>
+		Alice - I love the weather today (5 minutes ago) 
+	</code>	
 	<br />
-	> Charlie follows Bob  
+	<code>
+		> Charlie follows Bob  
+	</code>	
 	<br />
-	> Charlie wall  
+	<code>
+		> Charlie wall  
+	</code>	
 	<br />
-	Charlie - I’m in New York today! Anyone wants to have a coffee? (15 seconds ago)  
+	<code>
+		Charlie - I’m in New York today! Anyone wants to have a coffee? (15 seconds ago)  
+	</code>	
 	<br />
-	Bob - Good game though. (1 minute ago)  
+	<code>
+		Bob - Good game though. (1 minute ago)  
+	</code>	
 	<br />
-	Bob - Damn! We lost! (2 minutes ago)  
+	<code>
+		Bob - Damn! We lost! (2 minutes ago)  
+	</code>	
 	<br />
-	Alice - I love the weather today (5 minutes ago) 
+	<code>
+		Alice - I love the weather today (5 minutes ago) 
+	</code>	
 </p>
 
 <h2>
