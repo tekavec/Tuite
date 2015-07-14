@@ -68,7 +68,10 @@
 	Usage
 </h2>
 <p>
-	Users submit commands to the application. There are four commands. "posting", "reading", etc. are not part of 
+	Users submit commands to the console application. All users use the same console. Users submits their messages and read messges from other users with the command syntax described below.
+</p>
+<p>	
+	There are four commands. "posting", "reading", etc. are not part of 
 	the commands; commands always start with the user’s name.  
 	<ul>
 		<li>posting: [user name] -> [message]</li>
@@ -77,7 +80,9 @@
 		<li>wall: [user name] wall</li>
 	</ul>
 </p>
-
+</p>
+	There is no special user registration command - non existing users are created when they post their firs message. 
+<p>
 <h2>
 	Installation
 </h3>
@@ -106,5 +111,10 @@
 	Setup
 </h3>
 <p>
-	Open Tuite.sln in Visual Studio 2013, set Tuite project as a startup project, build the solution and hit the F5/Start command button. Building the solution should install all necessary NuGet packages.
+	<ul>
+		<li>Open Tuite.sln in Visual Studio 2013</li>
+		<li>Set the "Tuite" project as a startup project</li>
+		<li>Build the solution and hit the F5/Start command button</li>
+	</ul>
+	Building the solution should install all necessary NuGet packages.
 </p>
