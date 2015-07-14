@@ -112,7 +112,7 @@
 </h3>
 <p>
 	<ul>
-		<li>Open Tuite.sln in Visual Studio 2013</li>
+		<li>Open the "Tuite.sln" file with the Visual Studio 2013</li>
 		<li>Set the "Tuite" project as a startup project</li>
 		<li>Build the solution and hit the F5/Start command button</li>
 	</ul>
