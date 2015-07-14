@@ -3,11 +3,11 @@
     public class Console : IConsole
     {
         public virtual event NotifyObserverHandler RaiseReadLine;
-        const string CReadPrompt = "> ";
+        const string ReadPrompt = "> ";
 
         public virtual void ReadLine()
         {
-            System.Console.Write(CReadPrompt); //not sure if needed but this way it works as in requrements
+            System.Console.Write(ReadPrompt); //not sure if needed but this way it works as in requrements
             string input = System.Console.ReadLine();
             if (RaiseReadLine != null)
             {

@@ -14,12 +14,12 @@ namespace Tuite.Model.Subscriptions
             {
                 _Subscriptions.Add(new Subscription{Followee = followee, Follower = follower});
             }
-            //Checking for follower duplicates is not a request therefore is not implemented.
+            //NOTE: checking for follower duplicates is not a request therefore is not implemented.
         }
 
-        public IList<User> GetSubscribedUsersOfFollower(string name)
+        public IList<User> GetSubscribedUsersOf(User follower)
         {
-            var followees = _Subscriptions.Where(a => a.Follower.Name == name).Select(a => a.Followee).ToList();
+            var followees = _Subscriptions.Where(a => a.Follower.Equals(follower)).Select(a => a.Followee).ToList();
             return followees;
         }
 

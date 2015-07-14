@@ -5,9 +5,9 @@
         private readonly IConsole _Console;
         private readonly IService _Service;
         private readonly char[] _Separators = { ' ' };
-        private const string CWallCommandString = "wall";
-        private const string CPostCommandString = "->";
-        private const string CFollowsCommandString = "follows";
+        private const string WallCommandString = "wall";
+        private const string PostCommandString = "->";
+        private const string FollowsCommandString = "follows";
 
 
         public ConsoleController(IService service, IConsole console)
@@ -19,40 +19,32 @@
 
         private void ProcessConsoleInput(object source, ReadLineEventArgs e)
         {
-            //could use command pattern (if new commands request arise) 
+            //NOTE: refactor to interpreter if command grammar become too complex
             string[] parts = e.Input.Split(_Separators, 3);
             var length = parts.Length;
-            switch (length)
+            if (length == 0)
             {
-                case 1:
-                    _Service.ShowTimeline(parts[0]);
-                    break;
-                case 2:
-                    switch (parts[1])
-                    {
-                        case CWallCommandString:
-                        {
-                            _Service.ShowWall(parts[0]);
-                            break;
-                        }
-                    }
-                    break;
-                case 3:
+                return;
+            }
+            var userName = parts[0];
+            if (length == 1)
+            {
+                _Service.ShowTimeline(userName);
+            }
+            else 
+            {
+                var commandString = parts[1];
+                if (commandString == WallCommandString)
                 {
-                    switch (parts[1])
-                    {
-                        case CPostCommandString:
-                            {
-                                _Service.CreateUserIfNecessaryAndPostMessage(parts[0], parts[2]);
-                                break;
-                            }
-                        case CFollowsCommandString:
-                            {
-                                _Service.Subscribe(parts[0], parts[2]);
-                                break;
-                            }
-                    }
-                    break;
+                    _Service.ShowWall(userName);
+                }
+                else if (commandString == PostCommandString)
+                {
+                    _Service.CreateUserIfNecessaryAndPostMessage(userName, parts[2]);
+                }
+                else if (commandString == FollowsCommandString)
+                {
+                    _Service.Subscribe(userName, parts[2]);
                 }
             }
         }

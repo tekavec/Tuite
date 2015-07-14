@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Tuite.Model.Message;
 using Tuite.Model.Subscriptions;
 using Tuite.Model.Users;
@@ -50,7 +49,7 @@ namespace Tuite
             User user = _UserRepository.GetUser(name);
             if (user != null)
             {
-                IList<User> aggregatedSubscriptions = _SubscriptionRepository.GetSubscribedUsersOfFollower(name);
+                IList<User> aggregatedSubscriptions = _SubscriptionRepository.GetSubscribedUsersOf(user);
                 aggregatedSubscriptions.Add(user);
                 IList<Message> messages = _MessageRepository.MessagesOfSubscribedUsers(aggregatedSubscriptions);
                 _MessagePrinter.PrintWall(messages);

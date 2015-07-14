@@ -33,5 +33,16 @@ namespace Tuite.Tests.UnitTests
             Assert.AreEqual(_UserRepository.AllUsers().Count, 1);
         }
 
+        [Test]
+        public void RetrieveAUserByName()
+        {
+            _UserRepository = new UserRepository();
+
+            _UserRepository.AddUser("Alice");
+            _UserRepository.AddUser("Charlie");
+
+            Assert.AreEqual(_UserRepository.GetUser("Alice"), new User {Name = "Alice"});
+        }
+
     }
 }

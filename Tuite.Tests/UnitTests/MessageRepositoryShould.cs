@@ -32,7 +32,12 @@ namespace Tuite.Tests.UnitTests
             Assert.AreEqual(messagesOfUser.Count, 1);
             Assert.AreEqual(
                 messagesOfUser[0],
-                new Message { Author = alice, Text = "I love the weather today", Time = _CNow });
+                new Message
+                {
+                    Author = alice, 
+                    Text = "I love the weather today", 
+                    Time = _CNow
+                });
         }
 
         [Test]
@@ -54,10 +59,17 @@ namespace Tuite.Tests.UnitTests
             Assert.AreEqual(wall.Count, 2);
             Assert.AreEqual(
                 wall[0],
-                new Message { Author = alice, Text = "I love the weather today", Time = _CNow });
+                new Message { Author = alice, 
+                    Text = "I love the weather today", 
+                    Time = _CNow });
             Assert.AreEqual(
                 wall[1],
-                new Message { Author = charlie, Text = "I’m in New York today! Anyone want to have a coffee?", Time = _CNow });
+                new Message
+                {
+                    Author = charlie, 
+                    Text = "I’m in New York today! Anyone want to have a coffee?", 
+                    Time = _CNow
+                });
         }
 
     }

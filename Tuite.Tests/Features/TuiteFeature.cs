@@ -68,7 +68,7 @@ namespace Tuite.Tests.Features
             _Clock.Setup(a => a.CurrentDateAndTime).Returns(_Now);
             _ConsoleController.PerformReadLine();
 
-            //shortcut to verifying WriteLine method, not quite happy with that
+            //NOTE: shortcut to verifying WriteLine method, not quite happy with that
             _Console.CallBase = true; 
 
             //Alice
@@ -84,7 +84,6 @@ namespace Tuite.Tests.Features
             _Console.Verify(c => c.WriteLine("Bob - Damn! We lost! (2 minutes ago)"));
             _Console.Verify(c => c.WriteLine("Bob - Good game though. (1 minute ago)"));
             _Console.Verify(c => c.WriteLine("Alice - I love the weather today (5 minutes ago)"));
-
         }
 
     }

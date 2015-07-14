@@ -10,11 +10,6 @@ namespace Tuite.Tests.UnitTests
     {
         private ISubscriptionRepository _SubscriptionRepository;
 
-        [TestFixtureSetUp]
-        public void Initialize()
-        {
-        }
-
         [Test]
         public void CreateAndStoreASubscription()
         {
@@ -37,6 +32,7 @@ namespace Tuite.Tests.UnitTests
 
             _SubscriptionRepository.AddSubscriptionIfNoneParticipantIsNull(user, null);
             _SubscriptionRepository.AddSubscriptionIfNoneParticipantIsNull(null, user);
+            _SubscriptionRepository.AddSubscriptionIfNoneParticipantIsNull(null, null);
 
             var allSubscription = _SubscriptionRepository.AllSubscription();
             Assert.AreEqual(allSubscription.Count, 0);
@@ -54,11 +50,10 @@ namespace Tuite.Tests.UnitTests
             _SubscriptionRepository.AddSubscriptionIfNoneParticipantIsNull(charlie, bob);
             _SubscriptionRepository.AddSubscriptionIfNoneParticipantIsNull(bob, charlie);
 
-            IList<User> followeesOfCharlie = _SubscriptionRepository.GetSubscribedUsersOfFollower(charlie.Name);
+            IList<User> followeesOfCharlie = _SubscriptionRepository.GetSubscribedUsersOf(charlie);
             Assert.AreEqual(followeesOfCharlie.Count, 2);
-            IList<User> followeesOfBob = _SubscriptionRepository.GetSubscribedUsersOfFollower(bob.Name);
+            IList<User> followeesOfBob = _SubscriptionRepository.GetSubscribedUsersOf(bob);
             Assert.AreEqual(followeesOfBob.Count, 1);
-
         }
 
     }

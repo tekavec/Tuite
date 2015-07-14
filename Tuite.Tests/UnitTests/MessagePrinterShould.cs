@@ -33,7 +33,6 @@ namespace Tuite.Tests.UnitTests
 
             _Console.Verify(c => c.WriteLine("Damn! We lost! (2 minutes ago)"));
             _Console.Verify(c => c.WriteLine("Good game though. (1 minute ago)"));
-
         }
 
         [Test]
@@ -45,7 +44,6 @@ namespace Tuite.Tests.UnitTests
 
             _Console.Verify(c => c.WriteLine("Bob - Damn! We lost! (2 minutes ago)"));
             _Console.Verify(c => c.WriteLine("Bob - Good game though. (1 minute ago)"));
-
         }
 
         private List<Message> CreateDummyMessages()
@@ -59,7 +57,6 @@ namespace Tuite.Tests.UnitTests
             };
             return messages;
         }
-
 
     }
 }

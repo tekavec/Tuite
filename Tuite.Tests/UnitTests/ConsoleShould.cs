@@ -6,8 +6,8 @@ namespace Tuite.Tests.UnitTests
     public class ConsoleShould
     {
         private IConsole _Console;
-        bool _EventRaised;
-        object _EventSource;
+        private bool _EventRaised;
+        private object _EventSource;
 
         [SetUp]
         public void Setup()

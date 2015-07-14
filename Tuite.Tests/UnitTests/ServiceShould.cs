@@ -66,7 +66,7 @@ namespace Tuite.Tests.UnitTests
             var user = new User { Name = "Charlie" };
             var subscriptions = new List<User> { user };
             _UserRepository.Setup(a => a.GetUser(user.Name)).Returns(user);
-            _SubscriptionRepository.Setup(a => a.GetSubscribedUsersOfFollower(user.Name)).Returns(subscriptions);
+            _SubscriptionRepository.Setup(a => a.GetSubscribedUsersOf(user)).Returns(subscriptions);
             _MessageRepository.Setup(a => a.MessagesOfSubscribedUsers(subscriptions)).Returns(messages);
 
             _Service.ShowWall(user.Name);
@@ -82,7 +82,7 @@ namespace Tuite.Tests.UnitTests
             User user = null;
             var subscriptions = new List<User>();
             _UserRepository.Setup(a => a.GetUser(iDontExist)).Returns(user);
-            _SubscriptionRepository.Setup(a => a.GetSubscribedUsersOfFollower(iDontExist)).Returns(subscriptions);
+            _SubscriptionRepository.Setup(a => a.GetSubscribedUsersOf(user)).Returns(subscriptions);
             _MessageRepository.Setup(a => a.MessagesOfSubscribedUsers(subscriptions)).Returns(messages);
 
             _Service.ShowWall(iDontExist);

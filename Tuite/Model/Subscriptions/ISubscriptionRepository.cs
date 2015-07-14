@@ -6,7 +6,7 @@ namespace Tuite.Model.Subscriptions
     public interface ISubscriptionRepository
     {
         void AddSubscriptionIfNoneParticipantIsNull(User follower, User followee);
-        IList<User> GetSubscribedUsersOfFollower(string name);
+        IList<User> GetSubscribedUsersOf(User follower);
         IList<Subscription> AllSubscription();
     }
 }

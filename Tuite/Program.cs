@@ -8,6 +8,7 @@ namespace Tuite
     {
         static void Main()
         {
+            //NOTE: IoC (e.g. Windsor Container) could be introduced for easier dependency graph handling
             var clock = new Clock();
             var console = new Console();
             var messagePrinter = new MessagePrinter(console, clock);
