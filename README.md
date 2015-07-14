@@ -1,14 +1,14 @@
 # Tuite
-<h1>Tuite application</h1>
+<h2>Tuite application</h2>
 <p>
 	Tuite is a simple console-based social networking application (similar to Twitter) satisfying the scenarios below. It is writen in .NET C# language.
 </p>
 <h3>
 	Scenarios
 </h3>
-<p>
-	<strong>Posting</strong>
-</p>
+
+<h4>Posting</h4>
+
 <p>
 	Alice can publish messages to a personal timeline:
 </p>
@@ -26,9 +26,9 @@
 	</code>
 </p>
 
-<p>
-	<strong>Reading</strong>
-</p>
+
+<h4>Reading</h4>
+
 <p>
 	Bob can view Alice’s timeline:
 </p>
@@ -53,9 +53,9 @@
 		Damn! We lost! (2 minutes ago) 
 	</code>	
 </p>
-<p>
-	<strong>Following</strong>
-</p>
+
+<h4>Following</h4>
+
 <p>
 	Charlie can subscribe to Alice’s and Bob’s timelines, and view an aggregated list of all subscriptions:
 </p>
@@ -126,8 +126,8 @@
 <p>
 <h2>
 	Installation
-</h3>
-<h2>
+</h2>
+<h3>
 	Requirements
 </h3>
 <p>
