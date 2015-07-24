@@ -1,74 +1,118 @@
 # Tuite
-<h1>Tuite application</h1>
+<h2>Tuite application</h2>
 <p>
 	Tuite is a simple console-based social networking application (similar to Twitter) satisfying the scenarios below. It is writen in .NET C# language.
 </p>
 <h3>
 	Scenarios
 </h3>
-<p>
-	<strong>Posting</strong>
-</p>
-<p>
-	Alice can publish messages to a personal timeline:
-	> Alice -> I love the weather today  
-	> Bob -> Damn! We lost!  
-	> Bob -> Good game though. 
-</p>
+
+<h4>Posting</h4>
 
 <p>
-	<strong>Reading</strong>
+	Alice can publish messages to a personal timeline:
 </p>
+<p>
+	<code>
+		> Alice -> I love the weather today  
+	</code>	
+	<br />
+	<code>
+		> Bob -> Damn! We lost!  
+	</code>
+	<br />
+	<code>
+		> Bob -> Good game though. 
+	</code>
+</p>
+
+
+<h4>Reading</h4>
+
 <p>
 	Bob can view Alice’s timeline:
 </p>
 <p>
-	> Alice 
+	<code>
+		> Alice 
+	</code>	
 	<br />
-	I love the weather today (5 minutes ago) 
+	<code>
+		I love the weather today (5 minutes ago) 
+	</code>	
 	<br />
-	> Bob  
+	<code>
+		> Bob  
+	</code>	
 	<br />
-	Good game though. (1 minute ago) 
+	<code>
+		Good game though. (1 minute ago) 
+	</code>	
 	<br />
-	Damn! We lost! (2 minutes ago) 
-	<br />
+	<code>
+		Damn! We lost! (2 minutes ago) 
+	</code>	
 </p>
-<p>
-	<strong>Following</strong>
-</p>
+
+<h4>Following</h4>
+
 <p>
 	Charlie can subscribe to Alice’s and Bob’s timelines, and view an aggregated list of all subscriptions:
 </p>
 <p>
-	> Charlie -> I’m in New York today! Anyone want to have a coffee?  
+	<code>
+		> Charlie -> I’m in New York today! Anyone want to have a coffee?  
+	</code>	
 	<br />
-	> Charlie follows Alice  
+	<code>
+		> Charlie follows Alice  
+	</code>	
 	<br />
-	> Charlie wall  
+	<code>
+		> Charlie wall  
+	</code>	
 	<br />
-	Charlie - I’m in New York today! Anyone want to have a coffee? (2 seconds ago)  
+	<code>
+		Charlie - I’m in New York today! Anyone want to have a coffee? (2 seconds ago)  
+	</code>	
 	<br />
-	Alice - I love the weather today (5 minutes ago) 
+	<code>
+		Alice - I love the weather today (5 minutes ago) 
+	</code>	
 	<br />
-	> Charlie follows Bob  
+	<code>
+		> Charlie follows Bob  
+	</code>	
 	<br />
-	> Charlie wall  
+	<code>
+		> Charlie wall  
+	</code>	
 	<br />
-	Charlie - I’m in New York today! Anyone wants to have a coffee? (15 seconds ago)  
+	<code>
+		Charlie - I’m in New York today! Anyone wants to have a coffee? (15 seconds ago)  
+	</code>	
 	<br />
-	Bob - Good game though. (1 minute ago)  
+	<code>
+		Bob - Good game though. (1 minute ago)  
+	</code>	
 	<br />
-	Bob - Damn! We lost! (2 minutes ago)  
+	<code>
+		Bob - Damn! We lost! (2 minutes ago)  
+	</code>	
 	<br />
-	Alice - I love the weather today (5 minutes ago) 
+	<code>
+		Alice - I love the weather today (5 minutes ago) 
+	</code>	
 </p>
 
 <h2>
 	Usage
 </h2>
 <p>
-	Users submit commands to the application. There are four commands. "posting", "reading", etc. are not part of 
+	Users submit commands to the console application. All users use the same console. Users submits their messages and read messges from other users with the command syntax described below.
+</p>
+<p>	
+	There are four commands. "posting", "reading", etc. are not part of 
 	the commands; commands always start with the user’s name.  
 	<ul>
 		<li>posting: [user name] -> [message]</li>
@@ -77,11 +121,13 @@
 		<li>wall: [user name] wall</li>
 	</ul>
 </p>
-
+</p>
+	There is no special user registration command - non existing users are created when they post their firs message. 
+<p>
 <h2>
 	Installation
-</h3>
-<h2>
+</h2>
+<h3>
 	Requirements
 </h3>
 <p>
@@ -106,5 +152,10 @@
 	Setup
 </h3>
 <p>
-	Open Tuite.sln in Visual Studio 2013, set Tuite project as a startup project, build the solution and hit the F5/Start command button. Building the solution should install all necessary NuGet packages.
+	<ul>
+		<li>Open the "Tuite.sln" file with the Visual Studio 2013</li>
+		<li>Set the "Tuite" project as a startup project</li>
+		<li>Build the solution and hit the F5/Start command button</li>
+	</ul>
+	Building the solution should install all necessary NuGet packages.
 </p>
