@@ -1,4 +1,6 @@
-﻿using Tuite.Model.Message;
+﻿using System.Collections.Generic;
+using Tuite.Commands;
+using Tuite.Model.Message;
 using Tuite.Model.Subscriptions;
 using Tuite.Model.Users;
 
@@ -15,11 +17,22 @@ namespace Tuite
             var messageRepository = new MessageRepository(clock);
             var subscriptionRepository = new SubscriptionRepository();
             var userRepository = new UserRepository();
-            var service = new Service(messagePrinter, messageRepository, subscriptionRepository, userRepository);
-            var controller = new ConsoleController(service, console);
+            IEnumerable<ICommandFactory> allCommands = new ICommandFactory[]
+            {
+                new PostMessageCommand(), 
+                new ShowTimelineCommand(), 
+                new CreateSubscriptionCommand(), 
+                new ShowWallCommand() 
+            };
+            var commandParser = new CommandParser(
+                allCommands, 
+                userRepository, 
+                messageRepository,
+                subscriptionRepository, 
+                messagePrinter);
             while (true)
             {
-                console.ReadLine();
+                commandParser.Parse(console.ReadLine()).Execute();
             }
         }
     }

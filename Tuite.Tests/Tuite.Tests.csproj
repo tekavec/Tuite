@@ -56,12 +56,16 @@
   <ItemGroup>
     <Compile Include="Features\TuiteFeature.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTests\ConsoleControllerShould.cs" />
+    <Compile Include="UnitTests\PostMessageCommandShould.cs" />
+    <Compile Include="UnitTests\CommandNameResolverShould.cs" />
+    <Compile Include="UnitTests\CommandParserShould.cs" />
     <Compile Include="UnitTests\ConsoleShould.cs" />
+    <Compile Include="UnitTests\CreateSubscriptionCommandShould.cs" />
+    <Compile Include="UnitTests\ShowWallCommandShould.cs" />
+    <Compile Include="UnitTests\ShowTimelineCommandShould.cs" />
     <Compile Include="UnitTests\UserRepositoryShould.cs" />
     <Compile Include="UnitTests\SubscriptionRepositoryShould.cs" />
     <Compile Include="UnitTests\MessageRepositoryShould.cs" />
-    <Compile Include="UnitTests\ServiceShould.cs" />
     <Compile Include="UnitTests\MessagePrinterShould.cs" />
   </ItemGroup>
   <ItemGroup>

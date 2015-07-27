@@ -2,17 +2,12 @@
 {
     public class Console : IConsole
     {
-        public virtual event NotifyObserverHandler RaiseReadLine;
         const string ReadPrompt = "> ";
 
-        public virtual void ReadLine()
+        public virtual string ReadLine()
         {
             System.Console.Write(ReadPrompt); //not sure if needed but this way it works as in requrements
-            string input = System.Console.ReadLine();
-            if (RaiseReadLine != null)
-            {
-                RaiseReadLine(this, new ReadLineEventArgs{Input = input});
-            }
+            return System.Console.ReadLine();
         }
 
         public virtual void WriteLine(string value)

@@ -40,15 +40,20 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleController.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\ICommandFactory.cs" />
+    <Compile Include="Commands\PostMessageCommand.cs" />
+    <Compile Include="CommandParser.cs" />
+    <Compile Include="Commands\CreateSubscriptionCommand.cs" />
+    <Compile Include="Commands\ShowWallCommand.cs" />
+    <Compile Include="Commands\ShowTimelineCommand.cs" />
+    <Compile Include="ICommandParser.cs" />
     <Compile Include="Model\Subscriptions\ISubscriptionRepository.cs" />
     <Compile Include="Model\Subscriptions\SubscriptionRepository.cs" />
     <Compile Include="Model\Users\IUserRepository.cs" />
     <Compile Include="Model\Users\UserRepository.cs" />
     <Compile Include="Model\Users\User.cs" />
-    <Compile Include="ReadLineEventArgs.cs" />
     <Compile Include="IMessagePrinter.cs" />
-    <Compile Include="IService.cs" />
     <Compile Include="Model\Message\Clock.cs" />
     <Compile Include="Model\Message\IClock.cs" />
     <Compile Include="Model\Message\IMessageRepository.cs" />
@@ -56,11 +61,11 @@
     <Compile Include="Model\Message\MessageRepository.cs" />
     <Compile Include="Model\Subscriptions\Subscription.cs" />
     <Compile Include="MessagePrinter.cs" />
-    <Compile Include="Service.cs" />
     <Compile Include="Console.cs" />
     <Compile Include="IConsole.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\CommandNameResolver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

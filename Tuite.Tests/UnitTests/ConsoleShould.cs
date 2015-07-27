@@ -1,38 +1,36 @@
-﻿using NUnit.Framework;
+﻿using Moq;
+using NUnit.Framework;
 
 namespace Tuite.Tests.UnitTests
 {
     [TestFixture]
     public class ConsoleShould
     {
-        private IConsole _Console;
-        private bool _EventRaised;
-        private object _EventSource;
+        private Mock<IConsole> _Console;
+
 
         [SetUp]
         public void Setup()
         {
-            _Console = new Console();
-            _Console.RaiseReadLine += _Console_RaiseReadLine;
-            _Console.ReadLine();
+            _Console = new Mock<IConsole>();
         }
 
         [Test]
-        public void RaiseTheReadLineEvent()
+        public void ReadALine()
         {
-            Assert.IsTrue(_EventRaised);
+            _Console.Setup(a => a.ReadLine()).Returns("some text");
+            var input = _Console.Object.ReadLine();
+
+            Assert.AreEqual("some text", input);
         }
+
 
         [Test]
-        public void BeTheSourceOfTheReadLineEvent()
+        public void WriteAString()
         {
-            Assert.AreSame(_EventSource, _Console);
-        }
+            _Console.Object.WriteLine("some text");
 
-        private void _Console_RaiseReadLine(object source, ReadLineEventArgs e)
-        {
-            _EventRaised = true;
-            _EventSource = source;
+            _Console.Verify(a => a.WriteLine("some text"));
         }
 
     }
